@@ -2,6 +2,7 @@
 
 const textElement = document.getElementById("text");
 const optionsButtonsElement = document.getElementById("option-buttons");
+const imageContainerElement = document.getElementById("image-container");
 
 let state = {};
 
@@ -28,7 +29,7 @@ function showTextNodes(textNodeIndex) {
   textNode.options.forEach((option) => {
     if (showOption(option)) {
       const button = document.createElement("button");
-      button.innerText = option.text;
+      button.innerHTML = option.text;
       button.classList.add("btn");
       button.addEventListener("click", () => selectOption(option));
       optionsButtonsElement.appendChild(button);
@@ -48,6 +49,8 @@ function selectOption(option) {
   state = Object.assign(state, option.setState);
   showTextNodes(nextTextNodeId);
 }
+
+function setScene() {}
 
 const textNodes = [
   {

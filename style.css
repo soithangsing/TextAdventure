@@ -49,3 +49,7 @@ body {
   color: #dff6ff;
   font-family: "Cormorant Infant", serif;
 }
+
+.main-menu-text {
+  text-align: center;
+}
