@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Barrio&family=Beth+Ellen&display=swap");
+
+/* font-family: 'Barrio', cursive;
+font-family: 'Beth Ellen', cursive; */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #62325d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 350px;
+  background-color: #212828;
+}
+
+.btn-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.btn {
+  background-color: #ca4e79;
+  color: #dff6ff;
+  padding: 5px 10px;
+}
+
+#text {
+  color: #dff6ff;
+}
