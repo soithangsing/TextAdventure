@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Barrio&family=Beth+Ellen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;700&display=swap");
 
-/* font-family: 'Barrio', cursive;
-font-family: 'Beth Ellen', cursive; */
+/* font weight 400 and 700 */
 
 body,
 html {
@@ -48,4 +47,5 @@ body {
 
 #text {
   color: #dff6ff;
+  font-family: "Cormorant Infant", serif;
 }

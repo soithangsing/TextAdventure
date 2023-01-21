@@ -6,8 +6,16 @@ const optionsButtonsElement = document.getElementById("option-buttons");
 let state = {};
 
 function startGame() {
-  state = {};
-  showTextNodes(0);
+  state = { default: true };
+  showTextNodes(1);
+}
+
+function mainMenu() {
+  location.reload();
+}
+
+function moreInfo() {
+  showTextNodes(99);
 }
 
 function showTextNodes(textNodeIndex) {
@@ -35,7 +43,7 @@ function showOption(option) {
 function selectOption(option) {
   const nextTextNodeId = option.nextText;
   if (nextTextNodeId <= 0) {
-    return startGame();
+    return mainMenu();
   }
   state = Object.assign(state, option.setState);
   showTextNodes(nextTextNodeId);
@@ -120,4 +128,9 @@ const textNodes = [
 ];
 
 // Call start game on main menu button
-startGame();
+// startGame();
+
+const startButton = document.getElementById("start-button");
+startButton.addEventListener("click", startGame);
+const moreInfoBtn = document.getElementById("more-info-button");
+moreInfoBtn.addEventListener("click", moreInfo);
