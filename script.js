@@ -8,3 +8,5 @@ function startGame() {}
 function showTextNodes(textNodeIndex) {}
 
 function selectOption(option) {}
+
+// Call start game on main menu button
