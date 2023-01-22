@@ -4,6 +4,11 @@ const textElement = document.getElementById("text");
 const optionsButtonsElement = document.getElementById("option-buttons");
 const imageContainerElement = document.getElementById("image-container");
 
+/*
+while (imageContainerElement.firstChild) {
+  imageContainerElement.removeChild(imageContainerElement.firstChild);
+} */
+
 let state = {};
 
 function startGame() {
@@ -18,6 +23,8 @@ function mainMenu() {
 function moreInfo() {
   showTextNodes(99);
 }
+
+function setScene() {}
 
 function showTextNodes(textNodeIndex) {
   const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
@@ -49,8 +56,6 @@ function selectOption(option) {
   state = Object.assign(state, option.setState);
   showTextNodes(nextTextNodeId);
 }
-
-function setScene() {}
 
 const textNodes = [
   {
@@ -137,3 +142,4 @@ const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", startGame);
 const moreInfoBtn = document.getElementById("more-info-button");
 moreInfoBtn.addEventListener("click", moreInfo);
+setScene();
