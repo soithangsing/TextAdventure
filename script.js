@@ -2,12 +2,10 @@
 
 const textElement = document.getElementById("text");
 const optionsButtonsElement = document.getElementById("option-buttons");
-const imageContainerElement = document.getElementById("image-container");
+const imageElement = document.getElementById("scene");
 
-/*
-while (imageContainerElement.firstChild) {
-  imageContainerElement.removeChild(imageContainerElement.firstChild);
-} */
+const mainMenuScene = "./assets/img/main-menu-pic.png";
+const shadowScene = "./assets/img/shadow.png";
 
 let state = {};
 
@@ -24,7 +22,10 @@ function moreInfo() {
   showTextNodes(99);
 }
 
-function setScene() {}
+function setScene(textNodeIndex) {
+  const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
+  imageElement.src = textNode.scene;
+}
 
 function showTextNodes(textNodeIndex) {
   const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
@@ -42,6 +43,8 @@ function showTextNodes(textNodeIndex) {
       optionsButtonsElement.appendChild(button);
     }
   });
+
+  setScene(textNodeIndex);
 }
 
 function showOption(option) {
@@ -102,6 +105,7 @@ const textNodes = [
         nextText: 2,
       },
     ],
+    scene: shadowScene,
   },
   {
     id: 2,
@@ -112,6 +116,7 @@ const textNodes = [
         nextText: 3,
       },
     ],
+    scene: shadowScene,
   },
   {
     id: 3,
@@ -122,6 +127,7 @@ const textNodes = [
         nextText: -1,
       },
     ],
+    scene: shadowScene,
   },
   {
     id: 99,
@@ -132,6 +138,7 @@ const textNodes = [
         nextText: -1,
       },
     ],
+    scene: shadowScene,
   },
 ];
 
@@ -142,4 +149,3 @@ const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", startGame);
 const moreInfoBtn = document.getElementById("more-info-button");
 moreInfoBtn.addEventListener("click", moreInfo);
-setScene();
